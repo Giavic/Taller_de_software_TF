@@ -1,7 +1,8 @@
 from PyQt5.QtCore import *
 from PyQt5 import QtWidgets, uic
 from messagebox import msg_error, msg_about
-import sqlite3 as sql
+import pymysql as sql
+import db
 
 app = QtWidgets.QApplication([])
 
@@ -12,12 +13,7 @@ registro_profesor = uic.loadUi("registro_profesor.ui")
 entrar= uic.loadUi("entrar.ui")
 
 
-try:
-    con = sql.connect("base de datos.db")
-    con.commit()
-    con.close()
-except:
-    print("Error en la base de datos...")
+db=db.Database()
 
 
 def gui_login():
@@ -27,54 +23,28 @@ def gui_login():
     if len(name) == 0 or len(password)==0:
         login.label_4.setText("Ingrese todos los datos")
     else:
-        con = sql.connect("base de datos.db")
-        cursor = con.cursor()
-        cursor.execute('SELECT usuario, contraseña FROM users WHERE usuario = ? AND contraseña = ?' ,(name, password))
+        rs=db.login_alumno(name, password)
 
-        if cursor.fetchall():
+        if rs:
             msg_about("","Se pudo iniciar sesión con éxito")
             gui_entrar()
         else:
             msg_error("Error", "El usuario o la contraseña no son correctos")
 
 
-def crear_tabla():
-    con = sql.connect("base de datos.db")
-    cursor = con.cursor()
-    cursor.execute(
-        """ CREATE TABLE IF NOT EXISTS users (
-            nombres text,
-            apellidos text,
-            correo text,
-            usuario text,
-            contraseña text
-        )"""
-    )
-
-    con.commit()
-    con.close()
-
-def registrar(nombres, apellidos, correo, usuario, contraseña):
-    con = sql.connect("base de datos.db")
-    cursor = con.cursor()
-    instruccion = f"INSERT INTO users VALUES ('{nombres}', '{apellidos}', '{correo}', '{usuario}', '{contraseña}')"
-    cursor.execute(instruccion)
-    con.commit()
-    con.close()
-
-def datos():
-    nombres = registro.lineEdit.text()
-    apellidos = registro.lineEdit_2.text()
+def gui_registro_alumno():
+    nombre = registro.lineEdit.text()
+    apellido = registro.lineEdit_2.text()
     correo = registro.lineEdit_3.text()
-    usuario = registro.lineEdit_4.text()
+    aula = registro.lineEdit_4.text()
     contraseña = registro.lineEdit_5.text()
 
     if len(contraseña) <= 6:
         msg_error("ERROR", "La contraseña debe tener como mínimo 7 dígitos")
 
     else:
-        registrar(nombres, apellidos, correo, usuario, contraseña)
-        msg_about("Éxito", "Se ha registrado el alumno correctamente")
+        db.registro_alumno(nombre, apellido, correo, contraseña, aula)
+        msg_about("Éxito", "Se ha registrado al alumno correctamente")
         registro.lineEdit.setText("")
         registro.lineEdit_2.setText("")
         registro.lineEdit_3.setText("")
@@ -92,14 +62,28 @@ def gui_volver_login():
     login.show()
 
 def gui_registro_profesor():
-    login.hide()
-    registro_profesor.show()
+    nombre = registro.lineEdit.text()
+    apellido = registro.lineEdit_2.text()
+    correo = registro.lineEdit_3.text()
+    aula = registro.lineEdit_4.text()
+    contraseña = registro.lineEdit_5.text()
+
+    if len(contraseña) <= 6:
+        msg_error("ERROR", "La contraseña debe tener como mínimo 7 dígitos")
+
+    else:
+        db.registro_tutor(nombre, apellido, aula, correo, contraseña)
+        msg_about("Éxito", "Se ha registrado al tutor correctamente")
+        registro.lineEdit.setText("")
+        registro.lineEdit_2.setText("")
+        registro.lineEdit_3.setText("")
+        registro.lineEdit_4.setText("")
+        registro.lineEdit_5.setText("")
     
 
 def gui_registro():
     login.hide()
     registro.show()
-    crear_tabla()
 
 def cerrar():
     app.exit()
@@ -110,7 +94,7 @@ login.pushButton.clicked.connect(gui_login)
 login.pushButton_2.clicked.connect(gui_registro)    
 login.pushButton_3.clicked.connect(cerrar)
 login.pushButton_4.clicked.connect(gui_registro_profesor)
-registro.pushButton.clicked.connect(datos)
+registro.pushButton.clicked.connect(gui_registro_alumno)
 registro.pushButton_2.clicked.connect(cerrar) 
 registro.pushButton_3.clicked.connect(gui_volver_login)
 registro_profesor.pushButton.clicked.connect(cerrar)   

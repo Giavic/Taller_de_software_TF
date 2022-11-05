@@ -135,7 +135,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Ingresar</string>
@@ -156,7 +156,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Registrar alumno</string>
@@ -195,7 +195,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>X</string>
@@ -216,7 +216,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Registrar profesor</string>
