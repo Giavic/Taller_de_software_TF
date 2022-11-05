@@ -178,7 +178,6 @@
     <string/>
    </property>
   </widget>
-<<<<<<< HEAD
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
@@ -202,8 +201,7 @@
     <string>X</string>
    </property>
   </widget>
-=======
->>>>>>> a530ffbb68cc49318050678cb177838d1b6eb97c
+
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
