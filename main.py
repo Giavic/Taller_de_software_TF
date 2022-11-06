@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets, uic
 from messagebox import msg_error, msg_about
 import pymysql as sql
 import db
+from PyQt5.QtWidgets import QStackedWidget
 
 app = QtWidgets.QApplication([])
 
@@ -84,7 +85,7 @@ def datos_tutor():
 def cerrar():
     app.exit()
 
- 
+
 login.pushButton.clicked.connect(gui_login)
 login.pushButton_2.clicked.connect(gui_registro_alumno)    
 login.pushButton_4.clicked.connect(gui_registro_tutor)
@@ -96,6 +97,16 @@ registro.pushButton_3.clicked.connect(gui_volver_login)
 registro_tutor.pushButton_3.clicked.connect(datos_tutor)
 registro_tutor.pushButton_3.clicked.connect(gui_registro_tutor)
 registro_tutor.pushButton_2.clicked.connect(gui_volver_login)
+
+entrar.pushButton_2.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_asistencia))
+entrar.pushButton_3.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_cursos))
+entrar.pushButton_8.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_mate))
+entrar.pushButton_9.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_ciencias))
+entrar.pushButton_10.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_comu))
+entrar.pushButton_11.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_EF))
+entrar.pushButton_12.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_Tuto))
+
+entrar.pushButton_4.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_reportes))
 
 login.show()
 app.exec_()
