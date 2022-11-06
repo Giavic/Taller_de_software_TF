@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, uic
 from messagebox import msg_error, msg_about
 import pymysql as sql
 import db
-from PyQt5.QtWidgets import QStackedWidget
+from PyQt5.QtWidgets import *
 
 app = QtWidgets.QApplication([])
 
@@ -39,15 +39,27 @@ def gui_registro_alumno():
     login.hide()
     registro.show()
 
-def gui_entrar(rs):
+def gui_entrar(result):
     login.hide()
     entrar.show()
-    entrar.label.setText(("Bienvenido alumno "+rs[1]+" "+rs[2]).upper())
+    entrar.label.setText(("Bienvenido alumno "+result[1]+" "+result[2]).upper())
+    rs=db.mostrar_reportes(result[0])
+    row=0
+    while(row<len(rs)):
+        entrar.tableWidget_2.insertRow(row)
+        numero=QTableWidgetItem(str(row+1))
+        comentario=QTableWidgetItem(str(rs[row][1]))
+        fecha= QTableWidgetItem(str(rs[row][2]))
+        entrar.tableWidget_2.setItem(row,0,numero)
+        entrar.tableWidget_2.setItem(row,1,comentario)
+        entrar.tableWidget_2.setItem(row,2,fecha)
+        row+=1
 
-def gui_entrar_tutor(rs):
+
+def gui_entrar_tutor(result):
     login.hide()
     entrar_tutor.show()
-    entrar_tutor.label.setText(("Bienvenido tutor "+rs[1]+" "+rs[2]).upper())
+    entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]).upper())
 
 def gui_volver_login():
     registro.hide()
@@ -99,7 +111,7 @@ def cerrar():
 
 
 
-
+entrar.tableWidget_3.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 login.pushButton.clicked.connect(gui_login)
 login.pushButton_2.clicked.connect(gui_registro_alumno)    
 login.pushButton_4.clicked.connect(gui_registro_tutor)
