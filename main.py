@@ -109,9 +109,17 @@ def datos_tutor():
 def cerrar():
     app.exit()
 
+def bloquear_tablas():
+    entrar.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_3.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_4.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_5.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_6.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar.tableWidget_7.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
+bloquear_tablas()
 
-entrar.tableWidget_3.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 login.pushButton.clicked.connect(gui_login)
 login.pushButton_2.clicked.connect(gui_registro_alumno)    
 login.pushButton_4.clicked.connect(gui_registro_tutor)

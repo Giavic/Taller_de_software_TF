@@ -386,6 +386,56 @@ border-radius:15px;
          <height>441</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIMESTRAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
@@ -411,6 +461,56 @@ border-radius:15px;
          <height>441</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIEMSTRAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
@@ -436,6 +536,24 @@ border-radius:15px;
          <height>441</height>
         </rect>
        </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="showGrid">
+        <bool>true</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="horizontalHeaderCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>263</number>
+       </attribute>
+       <attribute name="horizontalHeaderHighlightSections">
+        <bool>true</bool>
+       </attribute>
        <column>
         <property name="text">
          <string>N°</string>
@@ -476,15 +594,19 @@ border-radius:15px;
          <height>451</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">font:10pt;
-border:rgb(0, 0, 0);</string>
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
        </property>
-       <row>
-        <property name="text">
-         <string>New Row</string>
-        </property>
-       </row>
        <row>
         <property name="text">
          <string>TAREAS</string>
@@ -493,6 +615,11 @@ border:rgb(0, 0, 0);</string>
        <row>
         <property name="text">
          <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIMESTRAL</string>
         </property>
        </row>
        <row>
@@ -541,6 +668,11 @@ border:rgb(0, 0, 0);</string>
       </widget>
      </widget>
      <widget class="QWidget" name="page_ciencias">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <widget class="QTableWidget" name="tableWidget_4">
        <property name="geometry">
         <rect>
@@ -550,6 +682,56 @@ border:rgb(0, 0, 0);</string>
          <height>441</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIMESTRAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_5">
        <property name="geometry">
@@ -575,6 +757,56 @@ border:rgb(0, 0, 0);</string>
          <height>441</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIMESTRAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
