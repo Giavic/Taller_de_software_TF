@@ -12,6 +12,7 @@ login = uic.loadUi("untitled.ui")
 registro = uic.loadUi("registro.ui")
 registro_tutor = uic.loadUi("registro_profesor.ui")
 entrar= uic.loadUi("entrar.ui")
+entrar_tutor= uic.loadUi("entrar_tutor.ui")
 
 db=db.Database()
 
@@ -25,17 +26,28 @@ def gui_login():
         rs=db.login_alumno(correo, password) 
         if rs:
             msg_about("","Se pudo iniciar sesión con éxito")
-            gui_entrar()
+            gui_entrar(rs)
         else:
-            msg_error("Error", "El correo o la contraseña no son correctos")
+            rs=db.login_tutor(correo, password)
+            if rs:
+                msg_about("","Se pudo iniciar sesión con éxito")
+                gui_entrar_tutor(rs)
+            else:
+                login.label_4.setText("Correo o contraseña incorrectos")
 
 def gui_registro_alumno():
     login.hide()
     registro.show()
 
-def gui_entrar():
+def gui_entrar(rs):
     login.hide()
     entrar.show()
+    entrar.label.setText(("Bienvenido alumno "+rs[1]+" "+rs[2]).upper())
+
+def gui_entrar_tutor(rs):
+    login.hide()
+    entrar_tutor.show()
+    entrar_tutor.label.setText(("Bienvenido tutor "+rs[1]+" "+rs[2]).upper())
 
 def gui_volver_login():
     registro.hide()
@@ -84,6 +96,8 @@ def datos_tutor():
 
 def cerrar():
     app.exit()
+
+
 
 
 login.pushButton.clicked.connect(gui_login)
