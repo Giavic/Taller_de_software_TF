@@ -201,7 +201,6 @@
     <string>X</string>
    </property>
   </widget>
-
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
@@ -220,7 +219,7 @@
     <string notr="true">background-color: rgb(255,255,255);</string>
    </property>
    <property name="text">
-    <string>Registrar profesor</string>
+    <string>Registrar tutor</string>
    </property>
   </widget>
  </widget>

@@ -247,7 +247,7 @@ background-color:rgb(0, 255, 0);
     <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>REGISTRO PROFESOR</string>
+    <string>REGISTRO TUTOR</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
@@ -265,7 +265,11 @@ background-color:rgb(0, 255, 0);
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">QComboBox{
+background-color: rgb(255, 255, 255);
+}
+
+</string>
    </property>
    <item>
     <property name="text">

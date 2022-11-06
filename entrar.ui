@@ -436,6 +436,21 @@ border-radius:15px;
          <height>441</height>
         </rect>
        </property>
+       <column>
+        <property name="text">
+         <string>N°</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>COMENTARIO</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FECHA</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
@@ -455,12 +470,61 @@ border-radius:15px;
       <widget class="QTableWidget" name="tableWidget_3">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>90</y>
+         <x>40</x>
+         <y>80</y>
          <width>791</width>
-         <height>441</height>
+         <height>451</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </column>
       </widget>
       <widget class="QLabel" name="label_4">
        <property name="geometry">
