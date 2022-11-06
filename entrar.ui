@@ -376,6 +376,56 @@ border-radius:15px;
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="page_3">
+      <widget class="QTableWidget" name="tableWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>791</width>
+         <height>441</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Educación Física</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QTableWidget" name="tableWidget_7">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>100</y>
+         <width>791</width>
+         <height>441</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tutoría</string>
+       </property>
+      </widget>
+     </widget>
      <widget class="QWidget" name="page_reportes">
       <widget class="QTableWidget" name="tableWidget_2">
        <property name="geometry">
@@ -398,6 +448,81 @@ border-radius:15px;
        </property>
        <property name="text">
         <string>Reportes</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_mate">
+      <widget class="QTableWidget" name="tableWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>791</width>
+         <height>441</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Matemática</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page">
+      <widget class="QTableWidget" name="tableWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>791</width>
+         <height>441</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ciencias</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QTableWidget" name="tableWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>791</width>
+         <height>441</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Comunicación</string>
        </property>
       </widget>
      </widget>
