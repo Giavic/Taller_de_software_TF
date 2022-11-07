@@ -1,5 +1,6 @@
 import pymysql as sql
 from random import *
+import datetime
 
 class Database:
     def __init__(self):
@@ -37,6 +38,7 @@ class Database:
 
     def registro_reporte(self,id,comentario,fecha,id_alumno):
         id=randint(1, 1000000)
+        now=datetime.datetime.now().strftime("%Y-%m-%d")
         self.cursor.execute('INSERT INTO Reporte VALUES ({0}, "{1}", "{2}", "{3}")'.format(id,comentario,fecha,id_alumno))
         self.connection.commit()
     
@@ -46,6 +48,14 @@ class Database:
 
     def mostrar_notas(self,id,curso):
         self.cursor.execute('SELECT * FROM Nota WHERE id_alumno = {0} and curso="{1}" '.format(id,curso))
+        return self.cursor.fetchone()
+
+    def mostrar_alumnos(self,aula):
+        self.cursor.execute('SELECT * FROM Alumno WHERE aula = "{0}"'.format(aula))
+        return self.cursor.fetchall()
+    
+    def buscar_alumno(self,nombre,apellido):
+        self.cursor.execute('SELECT * FROM Alumno WHERE nombre = "{0}" and apellido="{1}"'.format(nombre,apellido))
         return self.cursor.fetchone()
     
     

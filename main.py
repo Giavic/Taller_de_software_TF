@@ -50,7 +50,7 @@ def cerrar_sesion():
 def gui_entrar(result):
     login.hide()
     entrar.show()
-    entrar.label.setText(("Bienvenido alumno "+result[1]+" "+result[2]).upper())
+    entrar.label.setText(("Bienvenido alumno "+result[1]+" "+result[2]+"-"+result[5]).upper())
     rs_reporte=db.mostrar_reportes(result[0])
     row=0
     while(row<len(rs_reporte)):
@@ -289,7 +289,27 @@ def mostrar_nota_cien(rs_nota):
 def gui_entrar_tutor(result):
     login.hide()
     entrar_tutor.show()
-    entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]).upper())
+    entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]+"-"+result[3]).upper())
+    rs_alumnos=db.mostrar_alumnos(result[3])
+    mostrar_alumnos(rs_alumnos)
+
+def mostrar_alumnos(rs_alumnos):
+    row=0
+    while(row<len(rs_alumnos)):
+        entrar_tutor.tableWidget.insertRow(row)
+        nombre=QTableWidgetItem(str(rs_alumnos[row][1]))
+        apellido=QTableWidgetItem(rs_alumnos[row][2])
+        correo=QTableWidgetItem(rs_alumnos[row][3])
+        entrar_tutor.tableWidget.setItem(row,0,nombre)
+        entrar_tutor.tableWidget.setItem(row,1,apellido)
+        entrar_tutor.tableWidget.setItem(row,2,correo)
+        row+=1
+
+# def registrar_reporte(rs_alumnos):
+#     nombre=entrar_tutor.lineEdit.text()
+#     apellido=entrar_tutor.lineEdit_2.text()
+#     rs_buscar=db.buscar_alumno(nombre, apellido)
+#     print(rs_buscar)
 
 def gui_volver_login():
     registro.hide()
@@ -368,9 +388,11 @@ entrar.pushButton_9.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidge
 entrar.pushButton_10.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_comu))
 entrar.pushButton_11.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_EF))
 entrar.pushButton_12.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_Tuto))
-
 entrar.pushButton_4.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_reportes))
 entrar.pushButton_5.clicked.connect(cerrar_sesion)
+
+entrar_tutor.pushButton_2.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page))
+entrar_tutor.pushButton_3.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_2))
 
 
 entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
