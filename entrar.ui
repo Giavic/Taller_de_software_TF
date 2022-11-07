@@ -87,6 +87,32 @@ border-radius: 15px;</string>
      <string>BIENVENIDO ALUMNO XXXXXXXXXX</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>20</y>
+      <width>51</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imgs/11641484341uxf6pdncyjtkwmuiv24dbsb8yreddfga8wlwbdpzoedmrpj7i52iuvdf8unv0tcmsf1dp1dmlqnvjmgrdckpug9c89kewmqmwcqz.png</normaloff>imgs/11641484341uxf6pdncyjtkwmuiv24dbsb8yreddfga8wlwbdpzoedmrpj7i52iuvdf8unv0tcmsf1dp1dmlqnvjmgrdckpug9c89kewmqmwcqz.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QFrame" name="frame_3">
    <property name="geometry">
@@ -285,16 +311,6 @@ border-radius:15px;
       <string notr="true"/>
      </property>
      <widget class="QWidget" name="page_asistencia">
-      <widget class="QTableWidget" name="tableWidget">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>80</y>
-         <width>791</width>
-         <height>441</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
@@ -306,6 +322,39 @@ border-radius:15px;
        </property>
        <property name="text">
         <string>Asistencia</string>
+       </property>
+      </widget>
+      <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>90</y>
+         <width>761</width>
+         <height>431</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCalendarWidget QToolButton {
+	color: rgb(0, 0, 0);
+  	font-size: 12px;
+  	background-color:rgb(255, 255, 255);
+  }
+
+
+QCalendarWidget QWidget { alternate-background-color: rgb(128, 128, 128); }
+
+QCalendarWidget QAbstractItemView:enabled 
+  {
+  	font-size:24px;  
+  	color: rgb(180, 180, 180);  
+  	background-color: black;  
+  	selection-background-color: rgb(64, 64, 64); 
+  	selection-color: rgb(0, 255, 0); 
+  }
+</string>
+       </property>
+       <property name="gridVisible">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -382,7 +431,7 @@ border-radius:15px;
         <rect>
          <x>40</x>
          <y>90</y>
-         <width>791</width>
+         <width>811</width>
          <height>441</height>
         </rect>
        </property>
@@ -433,7 +482,13 @@ background-color: rgb(255, 255, 255);</string>
        </column>
        <column>
         <property name="text">
-         <string>PROMEDIO</string>
+         <string>FINAL</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
         </property>
        </column>
       </widget>
@@ -508,7 +563,7 @@ background-color: rgb(255, 255, 255);</string>
        </column>
        <column>
         <property name="text">
-         <string>PROMEDIO</string>
+         <string>FINAL</string>
         </property>
        </column>
       </widget>
@@ -535,6 +590,11 @@ background-color: rgb(255, 255, 255);</string>
          <width>791</width>
          <height>441</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="sizeAdjustPolicy">
         <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -649,7 +709,7 @@ background-color: rgb(255, 255, 255);</string>
        </column>
        <column>
         <property name="text">
-         <string>PROMEDIO</string>
+         <string>FINAL</string>
         </property>
        </column>
       </widget>
@@ -678,7 +738,7 @@ background-color: rgb(255, 255, 255);</string>
         <rect>
          <x>30</x>
          <y>90</y>
-         <width>791</width>
+         <width>821</width>
          <height>441</height>
         </rect>
        </property>
@@ -729,7 +789,7 @@ background-color: rgb(255, 255, 255);</string>
        </column>
        <column>
         <property name="text">
-         <string>PROMEDIO</string>
+         <string>FINAL</string>
         </property>
        </column>
       </widget>
@@ -804,7 +864,7 @@ background-color: rgb(255, 255, 255);</string>
        </column>
        <column>
         <property name="text">
-         <string>PROMEDIO</string>
+         <string>FINAL</string>
         </property>
        </column>
       </widget>
@@ -825,6 +885,8 @@ background-color: rgb(255, 255, 255);</string>
     </widget>
    </widget>
   </widget>
+  <zorder>frame_3</zorder>
+  <zorder>frame</zorder>
  </widget>
  <resources/>
  <connections/>

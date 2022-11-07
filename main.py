@@ -39,6 +39,14 @@ def gui_registro_alumno():
     login.hide()
     registro.show()
 
+def cerrar_sesion():
+    entrar.hide()
+    entrar_tutor.hide()
+    login.lineEdit.setText("")
+    login.lineEdit_2.setText("")
+    login.show()
+    msg_about("", "Sesión cerrada")
+
 def gui_entrar(result):
     login.hide()
     entrar.show()
@@ -332,7 +340,6 @@ def cerrar():
     app.exit()
 
 def bloquear_tablas():
-    entrar.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
     entrar.tableWidget_2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
     entrar.tableWidget_3.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
     entrar.tableWidget_4.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
@@ -363,6 +370,10 @@ entrar.pushButton_11.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidg
 entrar.pushButton_12.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_Tuto))
 
 entrar.pushButton_4.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_reportes))
+entrar.pushButton_5.clicked.connect(cerrar_sesion)
+
+
+entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
 
 login.show()
 app.exec_()
