@@ -36,10 +36,10 @@ class Database:
         self.cursor.execute('SELECT * FROM Tutor WHERE correo = "{0}" AND contraseña = "{1}"'.format(correo, password))
         return self.cursor.fetchone()
 
-    def registro_reporte(self,id,comentario,fecha,id_alumno):
+    def registro_reporte(self,comentario,fecha,id_alumno):
         id=randint(1, 1000000)
         now=datetime.datetime.now().strftime("%Y-%m-%d")
-        self.cursor.execute('INSERT INTO Reporte VALUES ({0}, "{1}", "{2}", "{3}")'.format(id,comentario,fecha,id_alumno))
+        self.cursor.execute('INSERT INTO Reporte VALUES ({0}, "{1}", "{2}", {3})'.format(id,comentario,fecha,id_alumno))
         self.connection.commit()
     
     def mostrar_reportes(self,id):
