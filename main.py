@@ -4,6 +4,7 @@ from messagebox import msg_error, msg_about
 import pymysql as sql
 import db
 from PyQt5.QtWidgets import *
+import datetime
 
 app = QtWidgets.QApplication([])
 
@@ -292,6 +293,8 @@ def gui_entrar_tutor(result):
     entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]+"-"+result[3]).upper())
     rs_alumnos=db.mostrar_alumnos(result[3])
     mostrar_alumnos(rs_alumnos)
+    entrar_tutor.pushButton_4.clicked.connect(registrar_reporte(result[0]))
+
 
 def mostrar_alumnos(rs_alumnos):
     row=0
@@ -305,11 +308,14 @@ def mostrar_alumnos(rs_alumnos):
         entrar_tutor.tableWidget.setItem(row,2,correo)
         row+=1
 
-# def registrar_reporte(rs_alumnos):
-#     nombre=entrar_tutor.lineEdit.text()
-#     apellido=entrar_tutor.lineEdit_2.text()
-#     rs_buscar=db.buscar_alumno(nombre, apellido)
-#     print(rs_buscar)
+def registrar_reporte(result):
+    nombre=entrar_tutor.lineEdit.text()
+    apellido=entrar_tutor.lineEdit_2.text()
+    rs_buscar=db.buscar_alumno(nombre, apellido)
+    id_alumno=rs_buscar[0]
+    reporte=entrar_tutor.lineEdit_3.text()
+    now=datetime.datetime.now().strftime("%Y-%m-%d")
+    db.registrar_reporte(result,id_alumno,now, reporte)
 
 def gui_volver_login():
     registro.hide()
