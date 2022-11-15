@@ -220,6 +220,38 @@ border-radius:15px;
       <string>Generar reporte</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>210</y>
+       <width>181</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+background-color: rgb(0, 255, 234);
+	
+}
+
+QPushButton{
+background-color: rgb(255, 0, 4);
+color: rgb(255, 255, 255);
+border-radius:15px;
+font: 12pt;
+}
+
+QPushButton:hover{
+background-color: rgb(255, 255, 255);
+color:rgb(0, 0, 0);
+border-radius:15px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Registrar notas</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
@@ -460,36 +492,11 @@ color:black;</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>330</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background-color: rgb(255, 0, 0);
-border-radius:0px;
-}
-
-QPushButton:hover{
-background-color: rgb(226, 226, 226);
-color:black;
-border-radius:0px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Buscar</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="pushButton_6">
        <property name="geometry">
         <rect>
-         <x>470</x>
-         <y>330</y>
+         <x>350</x>
+         <y>340</y>
          <width>111</width>
          <height>31</height>
         </rect>
@@ -510,6 +517,229 @@ border-radius:0px;
         <string>Generar</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <property name="styleSheet">
+       <string notr="true">QTableWidget{
+background-color: rgb(255, 255, 255);
+font: 12pt;
+color: rgb(0, 0, 0);
+}
+
+QLabel{
+font: 16pt;
+color: rgb(255, 255, 255);
+}
+
+QPushButton{
+font:16pt;
+color:rgb(255, 255, 255);
+background-color: rgb(255, 238, 0);
+border-radius:15px;
+}</string>
+      </property>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nombres</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Apellidos</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_5">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>291</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>40</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font:16px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Matemática</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Comunicación</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ciencias</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Educación Física</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tutoría</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Curso</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>470</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Registrar notas</string>
+       </property>
+      </widget>
+      <widget class="QTableWidget" name="tableWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>791</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font:10pt;
+border:rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <row>
+        <property name="text">
+         <string>TAREAS</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN MENSUAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>EXAMEN BIMESTRAL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FINAL</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </column>
+      </widget>
+      <zorder>lineEdit_4</zorder>
+      <zorder>lineEdit_5</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_8</zorder>
+      <zorder>comboBox</zorder>
+      <zorder>label_9</zorder>
+      <zorder>pushButton_7</zorder>
+      <zorder>tableWidget_6</zorder>
      </widget>
     </widget>
    </widget>

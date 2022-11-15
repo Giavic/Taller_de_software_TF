@@ -609,16 +609,14 @@ background-color: rgb(255, 255, 255);</string>
         <bool>false</bool>
        </attribute>
        <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>263</number>
+        <number>390</number>
        </attribute>
        <attribute name="horizontalHeaderHighlightSections">
         <bool>true</bool>
        </attribute>
-       <column>
-        <property name="text">
-         <string>N°</string>
-        </property>
-       </column>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>64</number>
+       </attribute>
        <column>
         <property name="text">
          <string>COMENTARIO</string>
