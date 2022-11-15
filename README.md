@@ -27,6 +27,7 @@ python main.py
 Probar con el usuario alumno:
 - correo: test
 - contraseña: 1234567
+
 Probar con el usuario tutor:
 - correo: asd
 - contraseña: 1234567
@@ -42,4 +43,6 @@ Caso contrario, seguir el flujo de registro.
 
 - [@acorteztouzett](https://github.com/acorteztouzett)
 - [@Giavic](https://github.com/Giavic)
+
+
 
