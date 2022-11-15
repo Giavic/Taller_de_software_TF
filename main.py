@@ -293,7 +293,7 @@ def gui_entrar_tutor(result):
     entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]+"-"+result[3]).upper())
     rs_alumnos=db.mostrar_alumnos(result[3])
     mostrar_alumnos(rs_alumnos)
-    entrar_tutor.pushButton_4.clicked.connect(registrar_reporte(result[0]))
+    entrar_tutor.pushButton_6.clicked.connect(generar_reporte)
 
 
 def mostrar_alumnos(rs_alumnos):
@@ -308,14 +308,21 @@ def mostrar_alumnos(rs_alumnos):
         entrar_tutor.tableWidget.setItem(row,2,correo)
         row+=1
 
-def registrar_reporte(result):
-    nombre=entrar_tutor.lineEdit.text()
-    apellido=entrar_tutor.lineEdit_2.text()
-    rs_buscar=db.buscar_alumno(nombre, apellido)
-    id_alumno=rs_buscar[0]
-    reporte=entrar_tutor.lineEdit_3.text()
-    now=datetime.datetime.now().strftime("%Y-%m-%d")
-    db.registrar_reporte(result,id_alumno,now, reporte)
+def generar_reporte(result):
+    try:
+        nombre=entrar_tutor.lineEdit.text()
+        apellido=entrar_tutor.lineEdit_2.text()
+        rs_buscar=db.buscar_alumno(nombre, apellido)
+        comentario=entrar_tutor.lineEdit_3.text()
+        fecha=datetime.datetime.now().strftime("%Y-%m-%d")
+        db.registro_reporte(comentario, fecha, rs_buscar[0])
+    except:
+        msg_error("ERROR", "No se encontró el alumno")   
+    else:
+        entrar_tutor.lineEdit.setText("")
+        entrar_tutor.lineEdit_2.setText("")
+        entrar_tutor.lineEdit_3.setText("")
+        msg_about("Éxito", "Reporte registado con correctamente") 
 
 def gui_volver_login():
     registro.hide()
