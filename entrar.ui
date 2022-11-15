@@ -71,13 +71,13 @@ border-radius: 15px;</string>
      <rect>
       <x>80</x>
       <y>20</y>
-      <width>731</width>
+      <width>891</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <pointsize>16</pointsize>
      </font>
     </property>
     <property name="styleSheet">
