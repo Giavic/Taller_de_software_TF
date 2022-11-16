@@ -65,5 +65,8 @@ class Database:
     def notas_reporte(self,id_alumno):
         self.cursor.execute('SELECT * FROM Nota WHERE id_alumno = {0}'.format(id_alumno))
         return self.cursor.fetchall()
-    
+
+    def mostrar_reportes_tutor(self,aula):
+        self.cursor.execute('SELECT Alumno.nombre,Alumno.apellido,Reporte.comentario,Reporte.fecha FROM Reporte INNER JOIN Alumno ON Reporte.id_alumno=Alumno.id WHERE Alumno.aula = "{0}"'.format(aula))
+        return self.cursor.fetchall()
     

@@ -5,6 +5,7 @@ import pymysql as sql
 import db
 from PyQt5.QtWidgets import *
 import datetime
+from fpdf import FPDF
 
 app = QtWidgets.QApplication([])
 
@@ -293,9 +294,11 @@ def gui_entrar_tutor(result):
     entrar_tutor.label.setText(("Bienvenido tutor "+result[1]+" "+result[2]+"-"+result[3]).upper())
     rs_alumnos=db.mostrar_alumnos(result[3])
     mostrar_alumnos(rs_alumnos)
+    rs_reportes=db.mostrar_reportes_tutor(result[3])
+    mostrar_reportes_tutor(rs_reportes)
     entrar_tutor.pushButton_6.clicked.connect(generar_reporte)
     entrar_tutor.pushButton_7.clicked.connect(generar_nota)
-
+    print(rs_reportes)
 
 def mostrar_alumnos(rs_alumnos):
     row=0
@@ -307,6 +310,18 @@ def mostrar_alumnos(rs_alumnos):
         entrar_tutor.tableWidget.setItem(row,0,nombre)
         entrar_tutor.tableWidget.setItem(row,1,apellido)
         entrar_tutor.tableWidget.setItem(row,2,correo)
+        row+=1
+
+def mostrar_reportes_tutor(rs_reportes):
+    row=0
+    while(row<len(rs_reportes)):
+        entrar_tutor.tableWidget_2.insertRow(row)
+        nombre=QTableWidgetItem(rs_reportes[row][0]+" "+rs_reportes[row][1])
+        reporte=QTableWidgetItem(rs_reportes[row][2])
+        fecha=QTableWidgetItem(str(rs_reportes[row][3]))
+        entrar_tutor.tableWidget_2.setItem(row,0,nombre)
+        entrar_tutor.tableWidget_2.setItem(row,1,reporte)
+        entrar_tutor.tableWidget_2.setItem(row,2,fecha)
         row+=1
 
 def generar_reporte(result):
@@ -324,7 +339,6 @@ def generar_reporte(result):
         entrar_tutor.lineEdit_2.setText("")
         entrar_tutor.lineEdit_3.setText("")
         msg_about("Éxito", "Reporte registado con correctamente")
-
 
 def generar_nota(result):
     try:
@@ -437,6 +451,7 @@ entrar.pushButton_5.clicked.connect(cerrar_sesion)
 entrar_tutor.pushButton_2.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page))
 entrar_tutor.pushButton_3.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_2))
 entrar_tutor.pushButton_4.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_3))
+entrar_tutor.pushButton_9.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_4))
 
 
 entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
