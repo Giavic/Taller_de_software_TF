@@ -337,7 +337,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QTableWidget" name="tableWidget">
@@ -709,9 +709,9 @@ font:16px;</string>
       <widget class="QTableWidget" name="tableWidget_6">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>90</y>
-         <width>801</width>
+         <x>0</x>
+         <y>100</y>
+         <width>811</width>
          <height>211</height>
         </rect>
        </property>
@@ -735,6 +735,11 @@ background-color: rgb(255, 255, 255);</string>
          <string>EXAMEN BIMESTRAL</string>
         </property>
        </row>
+       <row>
+        <property name="text">
+         <string>PROMEDIO</string>
+        </property>
+       </row>
        <column>
         <property name="text">
          <string>1° BIMESTRE</string>
@@ -753,6 +758,11 @@ background-color: rgb(255, 255, 255);</string>
        <column>
         <property name="text">
          <string>4° BIMESTRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FINAL</string>
         </property>
        </column>
       </widget>
