@@ -294,6 +294,7 @@ def gui_entrar_tutor(result):
     rs_alumnos=db.mostrar_alumnos(result[3])
     mostrar_alumnos(rs_alumnos)
     entrar_tutor.pushButton_6.clicked.connect(generar_reporte)
+    entrar_tutor.pushButton_7.clicked.connect(generar_nota)
 
 
 def mostrar_alumnos(rs_alumnos):
@@ -322,7 +323,36 @@ def generar_reporte(result):
         entrar_tutor.lineEdit.setText("")
         entrar_tutor.lineEdit_2.setText("")
         entrar_tutor.lineEdit_3.setText("")
-        msg_about("Éxito", "Reporte registado con correctamente") 
+        msg_about("Éxito", "Reporte registado con correctamente")
+
+
+def generar_nota(result):
+    try:
+        nombre=entrar_tutor.lineEdit_4.text()
+        apellido=entrar_tutor.lineEdit_5.text()
+        curso=entrar_tutor.comboBox.currentText()
+        rs_buscar=db.buscar_alumno(nombre, apellido)
+        tarea_b1=int(entrar_tutor.tableWidget_6.item(0,0).text())
+        tarea_b2=int(entrar_tutor.tableWidget_6.item(0,1).text())
+        tarea_b3=int(entrar_tutor.tableWidget_6.item(0,2).text())
+        tarea_b4=int(entrar_tutor.tableWidget_6.item(0,3).text())
+        parcial_b1=int(entrar_tutor.tableWidget_6.item(1,0).text())
+        parcial_b2=int(entrar_tutor.tableWidget_6.item(1,1).text())
+        parcial_b3=int(entrar_tutor.tableWidget_6.item(1,2).text())
+        parcial_b4=int(entrar_tutor.tableWidget_6.item(1,3).text())
+        bimentre1=int(entrar_tutor.tableWidget_6.item(2,0).text())
+        bimentre2=int(entrar_tutor.tableWidget_6.item(2,1).text())
+        bimentre3=int(entrar_tutor.tableWidget_6.item(2,2).text())
+        bimentre4=int(entrar_tutor.tableWidget_6.item(2,).text())
+        # db.registrar_nota(tarea_b1,rs_buscar[0], curso)
+        
+    except Exception as e:
+        print(e)
+        msg_error("ERROR", "No se encontró el alumno")
+    else:
+        entrar_tutor.lineEdit_4.setText("")
+        entrar_tutor.lineEdit_5.setText("")
+        msg_about("Éxito", "Notas registadas correctamente")
 
 def gui_volver_login():
     registro.hide()
@@ -406,6 +436,7 @@ entrar.pushButton_5.clicked.connect(cerrar_sesion)
 
 entrar_tutor.pushButton_2.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page))
 entrar_tutor.pushButton_3.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_2))
+entrar_tutor.pushButton_4.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_3))
 
 
 entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
