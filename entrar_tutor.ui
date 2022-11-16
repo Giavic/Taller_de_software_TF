@@ -337,7 +337,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QTableWidget" name="tableWidget">
@@ -794,17 +794,17 @@ background-color: rgb(255, 255, 255);</string>
        </attribute>
        <column>
         <property name="text">
-         <string>NOMBRE</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>APELLIDO</string>
+         <string>NOMBRES</string>
         </property>
        </column>
        <column>
         <property name="text">
          <string>REPORTE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FECHA</string>
         </property>
        </column>
       </widget>

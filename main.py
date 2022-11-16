@@ -42,8 +42,8 @@ def gui_registro_alumno():
     registro.show()
 
 def cerrar_sesion():
-    entrar.hide()
-    entrar_tutor.hide()
+    entrar.close()
+    entrar_tutor.close()
     login.lineEdit.setText("")
     login.lineEdit_2.setText("")
     login.show()
@@ -423,6 +423,8 @@ def bloquear_tablas():
     entrar.tableWidget_5.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
     entrar.tableWidget_6.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
     entrar.tableWidget_7.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar_tutor.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+    entrar_tutor.tableWidget_2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
 bloquear_tablas()
 
