@@ -62,4 +62,8 @@ class Database:
         self.cursor.execute('UPDATE Nota SET nota_b1={0},nota_b2={1},nota_b3={2},nota_b4={3},nota_p1={4},nota_p2={5},nota_p3={6},nota_p4={7},nota_t1={8},nota_t2={9},nota_t3={10},nota_t4={11} WHERE id_alumno={12} and curso="{13}"'.format(b1,b2,b3,b4,p1,p2,p3,p4,t1,t2,t3,t4,id_alumno,curso))
         self.connection.commit()
     
+    def notas_reporte(self,id_alumno):
+        self.cursor.execute('SELECT * FROM Nota WHERE id_alumno = {0}'.format(id_alumno))
+        return self.cursor.fetchall()
+    
     
