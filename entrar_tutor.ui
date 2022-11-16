@@ -246,10 +246,50 @@ QPushButton:hover{
 background-color: rgb(255, 255, 255);
 color:rgb(0, 0, 0);
 border-radius:15px;
+}
+
+QPushButton{
+font:17px;
 }</string>
      </property>
      <property name="text">
-      <string>Registrar notas</string>
+      <string>Registrar/Buscar notas</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>181</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+background-color: rgb(0, 255, 234);
+	
+}
+
+QPushButton{
+background-color: rgb(255, 0, 4);
+color: rgb(255, 255, 255);
+border-radius:15px;
+font: 12pt;
+}
+
+QPushButton:hover{
+background-color: rgb(255, 255, 255);
+color:rgb(0, 0, 0);
+border-radius:15px;
+}
+
+QPushButton{
+font:17px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Ver reportes</string>
      </property>
     </widget>
    </widget>
@@ -297,7 +337,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QTableWidget" name="tableWidget">
@@ -656,8 +696,8 @@ font:16px;</string>
       <widget class="QPushButton" name="pushButton_7">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>470</y>
+         <x>150</x>
+         <y>380</y>
          <width>191</width>
          <height>41</height>
         </rect>
@@ -671,8 +711,8 @@ font:16px;</string>
         <rect>
          <x>10</x>
          <y>90</y>
-         <width>791</width>
-         <height>361</height>
+         <width>801</width>
+         <height>211</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -695,11 +735,6 @@ background-color: rgb(255, 255, 255);</string>
          <string>EXAMEN BIMESTRAL</string>
         </property>
        </row>
-       <row>
-        <property name="text">
-         <string>PROMEDIO</string>
-        </property>
-       </row>
        <column>
         <property name="text">
          <string>1° BIMESTRE</string>
@@ -720,17 +755,19 @@ background-color: rgb(255, 255, 255);</string>
          <string>4° BIMESTRE</string>
         </property>
        </column>
-       <column>
-        <property name="text">
-         <string>FINAL</string>
-        </property>
-        <property name="font">
-         <font>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-       </column>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>380</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Buscar notas</string>
+       </property>
       </widget>
       <zorder>lineEdit_4</zorder>
       <zorder>lineEdit_5</zorder>
@@ -740,6 +777,37 @@ background-color: rgb(255, 255, 255);</string>
       <zorder>label_9</zorder>
       <zorder>pushButton_7</zorder>
       <zorder>tableWidget_6</zorder>
+      <zorder>pushButton_8</zorder>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QTableWidget" name="tableWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>761</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>253</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>NOMBRE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>APELLIDO</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>REPORTE</string>
+        </property>
+       </column>
+      </widget>
      </widget>
     </widget>
    </widget>
