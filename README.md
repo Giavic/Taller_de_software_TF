@@ -16,8 +16,13 @@ pip install PyQt5
 MySQL
 ```zsh
 pip install PyMySQL
-
 ```
+
+fpdf
+```zsh
+pip install fpdf2
+```
+
 # Probar el proyecto:
 
 Para ejecutar:
