@@ -188,7 +188,7 @@ border-radius:15px;
 }</string>
      </property>
      <property name="text">
-      <string>Asistencia</string>
+      <string>Calendario</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_3">
@@ -348,12 +348,12 @@ border-radius:15px;
         <rect>
          <x>40</x>
          <y>30</y>
-         <width>121</width>
+         <width>271</width>
          <height>31</height>
         </rect>
        </property>
        <property name="text">
-        <string>Asistencia</string>
+        <string>Calendario Académico</string>
        </property>
       </widget>
       <widget class="QCalendarWidget" name="calendarWidget">
