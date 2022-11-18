@@ -9,7 +9,6 @@ from fpdf import *
 
 app = QtWidgets.QApplication([])
 
-
 login = uic.loadUi("untitled.ui")
 registro = uic.loadUi("registro.ui")
 registro_tutor = uic.loadUi("registro_profesor.ui")
@@ -54,6 +53,8 @@ def gui_entrar(result):
     entrar.show()
     entrar.label.setText(("Bienvenido alumno "+result[1]+" "+result[2]+"-"+result[5]).upper())
     rs_reporte=db.mostrar_reportes(result[0])
+    rs_eventos=db.mostrar_eventos(result[5])
+    mostrar_eventos(rs_eventos)
     row=0
     while(row<len(rs_reporte)):
         entrar.tableWidget_2.insertRow(row)
@@ -508,9 +509,22 @@ def gui_entrar_tutor(result):
     mostrar_alumnos(rs_alumnos)
     rs_reportes=db.mostrar_reportes_tutor(result[3])
     mostrar_reportes_tutor(rs_reportes)
+    fecha= entrar_tutor.calendarWidget.selectedDate().toPyDate()
+    rs_eventos=db.mostrar_eventos(result[3])
+    mostrar_eventos_tutor(rs_eventos)
     entrar_tutor.pushButton_6.clicked.connect(generar_reporte)
     entrar_tutor.pushButton_7.clicked.connect(generar_nota)
     entrar_tutor.pushButton_8.clicked.connect(buscar_notas)
+    def generar_evento():
+        try:
+            evento=entrar_tutor.lineEdit_6.text()
+            fecha= entrar_tutor.calendarWidget.selectedDate().toPyDate()
+            db.registrar_evento(evento, fecha, result[3])
+        except Exception as e:
+            print(e)
+        else:
+            msg_about("Éxito", "Evento registado correctamente")
+    entrar_tutor.pushButton_11.clicked.connect(generar_evento)
 
 def mostrar_alumnos(rs_alumnos):
     row=0
@@ -551,6 +565,20 @@ def generar_reporte(result):
         entrar_tutor.lineEdit_2.setText("")
         entrar_tutor.lineEdit_3.setText("")
         msg_about("Éxito", "Reporte registado con correctamente")
+
+def mostrar_eventos_tutor(rs_eventos):
+    row=0
+    while(row<len(rs_eventos)):
+        item = QListWidgetItem(str(rs_eventos[row][1]))
+        entrar_tutor.listWidget.addItem(item)
+        row+=1
+
+def mostrar_eventos(rs_eventos):
+    row=0
+    while(row<len(rs_eventos)):
+        item = QListWidgetItem(str(rs_eventos[row][1]))
+        entrar.listWidget.addItem(item)
+        row+=1
 
 def generar_nota(result):
     try:
