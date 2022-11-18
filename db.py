@@ -70,3 +70,11 @@ class Database:
         self.cursor.execute('SELECT Alumno.nombre,Alumno.apellido,Reporte.comentario,Reporte.fecha FROM Reporte INNER JOIN Alumno ON Reporte.id_alumno=Alumno.id WHERE Alumno.aula = "{0}"'.format(aula))
         return self.cursor.fetchall()
     
+    def registrar_evento(self,evento,fecha,aula):
+        id=randint(1, 1000000)
+        self.cursor.execute('INSERT INTO Eventos VALUES ({0}, "{1}", "{2}", "{3}")'.format(id,evento,fecha,aula))
+        self.connection.commit()
+
+    def mostrar_eventos(self,aula):
+        self.cursor.execute('SELECT * FROM Eventos WHERE aula = "{0}"'.format(aula))
+        return self.cursor.fetchall()
