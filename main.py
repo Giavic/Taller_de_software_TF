@@ -622,7 +622,10 @@ def datos_alumno():
     correo = registro.lineEdit_3.text()
     aula = registro.comboBox.currentText()
     contraseña = registro.lineEdit_5.text()
-    if len(contraseña) <= 6:
+
+    if len(nombre) == 0 or len(apellido) == 0 or len(correo) == 0:
+        msg_error("","Complete todos los campos")
+    elif len(contraseña) <= 6:
         msg_error("ERROR", "La contraseña debe tener como mínimo 7 dígitos")
 
     else:
@@ -640,7 +643,9 @@ def datos_tutor():
     aula = registro_tutor.comboBox.currentText()
     contraseña = registro_tutor.lineEdit_5.text()
 
-    if len(contraseña) <= 6:
+    if len(nombre) == 0 or len(apellido) == 0 or len(correo) == 0:
+        msg_error("","Complete todos los campos")
+    elif len(contraseña) <= 6:
         msg_error("ERROR", "La contraseña debe tener como mínimo 7 dígitos")
 
     else:
@@ -837,7 +842,7 @@ def imprimir_notas():
         print(e)
         print("Error al generar el reporte")
     else:
-        msg_about("Éxito", "Reporte descargado correctamente, revisa tus archivos")
+        msg_about("Éxito", "Reporte descargado correctamente, busca en tu escritorio el archivo Reporte_Notas.pdf")
 
 def bloquear_tablas():
     entrar.tableWidget_2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)

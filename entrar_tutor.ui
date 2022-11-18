@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>642</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -697,10 +697,19 @@ font:16px;</string>
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>380</y>
+         <y>340</y>
          <width>191</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background-color: rgb(85, 0, 255);
+}
+QPushButton:hover{
+background-color: rgb(85, 170, 255);
+}
+</string>
        </property>
        <property name="text">
         <string>Registrar notas</string>
@@ -769,14 +778,54 @@ background-color: rgb(255, 255, 255);</string>
       <widget class="QPushButton" name="pushButton_8">
        <property name="geometry">
         <rect>
-         <x>410</x>
-         <y>380</y>
+         <x>430</x>
+         <y>340</y>
          <width>191</width>
          <height>41</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background-color: rgb(85, 0, 255);
+}
+QPushButton:hover{
+background-color: rgb(85, 170, 255);
+}
+</string>
+       </property>
        <property name="text">
         <string>Buscar notas</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>390</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Recuerda:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>430</y>
+         <width>771</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font:18px;</string>
+       </property>
+       <property name="text">
+        <string>Para registrar una nota primero debes buscar al alumno por nombre, apellido y curso 
+ y luego dar click en  el botón &quot;Buscar notas&quot; y luego ingresar las notas en la tabla. Finalmente 
+ presionar el botón &quot;Registrar notas&quot; para poder registrar las notas</string>
        </property>
       </widget>
       <zorder>lineEdit_4</zorder>
@@ -788,6 +837,8 @@ background-color: rgb(255, 255, 255);</string>
       <zorder>pushButton_7</zorder>
       <zorder>tableWidget_6</zorder>
       <zorder>pushButton_8</zorder>
+      <zorder>label_10</zorder>
+      <zorder>label_11</zorder>
      </widget>
      <widget class="QWidget" name="page_4">
       <widget class="QTableWidget" name="tableWidget_2">
