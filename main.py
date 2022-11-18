@@ -53,8 +53,15 @@ def gui_entrar(result):
     entrar.show()
     entrar.label.setText(("Bienvenido alumno "+result[1]+" "+result[2]+"-"+result[5]).upper())
     rs_reporte=db.mostrar_reportes(result[0])
-    rs_eventos=db.mostrar_eventos(result[5])
-    mostrar_eventos(rs_eventos)
+    def mostrar_eventos():
+        fecha= entrar.calendarWidget.selectedDate().toPyDate()
+        rs_eventos=db.mostrar_eventos(result[5],fecha)
+        entrar.listWidget.clear()
+        row=0
+        while(row<len(rs_eventos)):
+            item = QListWidgetItem(str(rs_eventos[row][1]))
+            entrar.listWidget.addItem(item)
+            row+=1
     row=0
     while(row<len(rs_reporte)):
         entrar.tableWidget_2.insertRow(row)
@@ -77,6 +84,7 @@ def gui_entrar(result):
     mostrar_nota_comu(rs_nota_comu)
     mostrar_nota_cien(rs_nota_cien)
     entrar.pushButton_6.clicked.connect(imprimir_notas)
+    entrar.calendarWidget.selectionChanged.connect(mostrar_eventos)
 
 # NO ABRIR XD
 def mostrar_nota_mate(rs_nota):
@@ -509,12 +517,19 @@ def gui_entrar_tutor(result):
     mostrar_alumnos(rs_alumnos)
     rs_reportes=db.mostrar_reportes_tutor(result[3])
     mostrar_reportes_tutor(rs_reportes)
-    fecha= entrar_tutor.calendarWidget.selectedDate().toPyDate()
-    rs_eventos=db.mostrar_eventos(result[3])
-    mostrar_eventos_tutor(rs_eventos)
+    def mostrar_eventos_tutor():
+        fecha= entrar_tutor.calendarWidget.selectedDate().toPyDate()
+        rs_eventos=db.mostrar_eventos(result[3],fecha)
+        entrar_tutor.listWidget.clear()
+        row=0
+        while(row<len(rs_eventos)):
+            item = QListWidgetItem(str(rs_eventos[row][1]))
+            entrar_tutor.listWidget.addItem(item)
+            row+=1
     entrar_tutor.pushButton_6.clicked.connect(generar_reporte)
     entrar_tutor.pushButton_7.clicked.connect(generar_nota)
     entrar_tutor.pushButton_8.clicked.connect(buscar_notas)
+    entrar_tutor.calendarWidget.selectionChanged.connect(mostrar_eventos_tutor)
     def generar_evento():
         try:
             evento=entrar_tutor.lineEdit_6.text()
@@ -537,7 +552,7 @@ def mostrar_alumnos(rs_alumnos):
         entrar_tutor.tableWidget.setItem(row,1,apellido)
         entrar_tutor.tableWidget.setItem(row,2,correo)
         row+=1
-
+    
 def mostrar_reportes_tutor(rs_reportes):
     row=0
     while(row<len(rs_reportes)):
@@ -565,20 +580,6 @@ def generar_reporte(result):
         entrar_tutor.lineEdit_2.setText("")
         entrar_tutor.lineEdit_3.setText("")
         msg_about("Éxito", "Reporte registado con correctamente")
-
-def mostrar_eventos_tutor(rs_eventos):
-    row=0
-    while(row<len(rs_eventos)):
-        item = QListWidgetItem(str(rs_eventos[row][1]))
-        entrar_tutor.listWidget.addItem(item)
-        row+=1
-
-def mostrar_eventos(rs_eventos):
-    row=0
-    while(row<len(rs_eventos)):
-        item = QListWidgetItem(str(rs_eventos[row][1]))
-        entrar.listWidget.addItem(item)
-        row+=1
 
 def generar_nota(result):
     try:

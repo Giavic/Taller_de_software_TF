@@ -75,6 +75,6 @@ class Database:
         self.cursor.execute('INSERT INTO Eventos VALUES ({0}, "{1}", "{2}", "{3}")'.format(id,evento,fecha,aula))
         self.connection.commit()
 
-    def mostrar_eventos(self,aula):
-        self.cursor.execute('SELECT * FROM Eventos WHERE aula = "{0}"'.format(aula))
+    def mostrar_eventos(self,aula,fecha):
+        self.cursor.execute('SELECT * FROM Eventos WHERE aula = "{0}" and fecha="{1}"'.format(aula,fecha))
         return self.cursor.fetchall()
