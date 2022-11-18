@@ -882,7 +882,7 @@ entrar_tutor.pushButton_2.clicked.connect(lambda: entrar_tutor.stackedWidget.set
 entrar_tutor.pushButton_3.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_2))
 entrar_tutor.pushButton_4.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_3))
 entrar_tutor.pushButton_9.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_4))
-
+entrar_tutor.pushButton_10.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_5))
 
 entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
 

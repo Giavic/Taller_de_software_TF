@@ -359,10 +359,10 @@ border-radius:15px;
       <widget class="QCalendarWidget" name="calendarWidget">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>90</y>
-         <width>761</width>
-         <height>431</height>
+         <x>40</x>
+         <y>100</y>
+         <width>471</width>
+         <height>391</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -377,7 +377,7 @@ QCalendarWidget QWidget { alternate-background-color: rgb(128, 128, 128); }
 
 QCalendarWidget QAbstractItemView:enabled 
   {
-  	font-size:24px;  
+  	font-size:18px;  
   	color: rgb(180, 180, 180);  
   	background-color: black;  
   	selection-background-color: rgb(64, 64, 64); 
@@ -387,6 +387,20 @@ QCalendarWidget QAbstractItemView:enabled
        </property>
        <property name="gridVisible">
         <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="listWidget">
+       <property name="geometry">
+        <rect>
+         <x>525</x>
+         <y>100</y>
+         <width>301</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
        </property>
       </widget>
      </widget>
