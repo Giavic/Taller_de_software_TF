@@ -62,16 +62,15 @@ def gui_entrar(result):
             item = QListWidgetItem(str(rs_eventos[row][1]))
             entrar.listWidget.addItem(item)
             row+=1
-    row=0
-    while(row<len(rs_reporte)):
-        entrar.tableWidget_2.insertRow(row)
-        numero=QTableWidgetItem(str(row+1))
-        comentario=QTableWidgetItem(str(rs_reporte[row][1]))
-        fecha= QTableWidgetItem(str(rs_reporte[row][2]))
-        entrar.tableWidget_2.setItem(row,0,numero)
-        entrar.tableWidget_2.setItem(row,1,comentario)
-        entrar.tableWidget_2.setItem(row,2,fecha)
-        row+=1
+    r=0
+    while(r<len(rs_reporte)):
+        entrar.tableWidget_2.insertRow(r)
+        numero=QTableWidgetItem(str(r+1))
+        comentario=QTableWidgetItem(str(rs_reporte[r][1]))
+        fecha= QTableWidgetItem(str(rs_reporte[r][2]))
+        entrar.tableWidget_2.setItem(r,0,comentario)
+        entrar.tableWidget_2.setItem(r,1,fecha)
+        r+=1
     
     rs_nota_mate=db.mostrar_notas(result[0],"Matemática")
     rs_nota_ed=db.mostrar_notas(result[0],"Educación Física")
