@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
+    <width>1093</width>
     <height>650</height>
    </rect>
   </property>
@@ -35,43 +35,12 @@ border-radius: 15px;</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>51</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>imgs/588a64e0d06f6719692a2d10.png</normaloff>imgs/588a64e0d06f6719692a2d10.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>10</x>
       <y>20</y>
-      <width>881</width>
+      <width>1011</width>
       <height>31</height>
      </rect>
     </property>
@@ -85,29 +54,6 @@ border-radius: 15px;</string>
     </property>
     <property name="text">
      <string>BIENVENIDO TUTOR XXXXXXXXXXXX</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>20</y>
-      <width>51</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>imgs/11641484341uxf6pdncyjtkwmuiv24dbsb8yreddfga8wlwbdpzoedmrpj7i52iuvdf8unv0tcmsf1dp1dmlqnvjmgrdckpug9c89kewmqmwcqz.png</normaloff>imgs/11641484341uxf6pdncyjtkwmuiv24dbsb8yreddfga8wlwbdpzoedmrpj7i52iuvdf8unv0tcmsf1dp1dmlqnvjmgrdckpug9c89kewmqmwcqz.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
     </property>
    </widget>
   </widget>

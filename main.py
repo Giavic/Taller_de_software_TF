@@ -40,13 +40,6 @@ def gui_registro_alumno():
     login.hide()
     registro.show()
 
-def cerrar_sesion():
-    entrar.close()
-    entrar_tutor.close()
-    login.lineEdit.setText("")
-    login.lineEdit_2.setText("")
-    login.show()
-    msg_about("", "Sesión cerrada")
 
 def gui_entrar(result):
     login.hide()
@@ -904,7 +897,6 @@ entrar.pushButton_10.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidg
 entrar.pushButton_11.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_EF))
 entrar.pushButton_12.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_Tuto))
 entrar.pushButton_4.clicked.connect(lambda: entrar.stackedWidget.setCurrentWidget(entrar.page_reportes))
-entrar.pushButton_5.clicked.connect(cerrar_sesion)
 
 entrar_tutor.pushButton_2.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page))
 entrar_tutor.pushButton_3.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_2))
@@ -912,7 +904,6 @@ entrar_tutor.pushButton_4.clicked.connect(lambda: entrar_tutor.stackedWidget.set
 entrar_tutor.pushButton_9.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_4))
 entrar_tutor.pushButton_10.clicked.connect(lambda: entrar_tutor.stackedWidget.setCurrentWidget(entrar_tutor.page_5))
 
-entrar_tutor.pushButton_5.clicked.connect(cerrar_sesion)
 
 login.show()
 app.exec_()
