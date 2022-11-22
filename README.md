@@ -39,6 +39,8 @@ Probar con el usuario tutor:
 
 Caso contrario, seguir el flujo de registro.
 
+# Base de datos:
+- El proyecto usa una base de datos en la nube, en caso no conecte usar la base de datos adjunta como Taller_DB.sql
 
 
 ## Repositorio
